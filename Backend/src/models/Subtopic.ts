@@ -13,7 +13,7 @@ export interface ISubtopic extends Document {
   notes: INote[];
   videos: string[];
   assignments: string[];
-}
+};
 
 const NoteSchema = new Schema<INote>({
   text: { type: String, required: true },

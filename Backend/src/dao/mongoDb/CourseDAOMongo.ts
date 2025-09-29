@@ -25,4 +25,4 @@ export class CourseDAOMongo implements ICourseDAO {
   async updateCourse(courseId: string, updateData: Partial<IBaseCourse>): Promise<IBaseCourse | null> {
     return await Basecourse.findByIdAndUpdate(courseId, updateData, { new: true }).exec();
   }
-}
+};

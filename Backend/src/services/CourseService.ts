@@ -71,4 +71,4 @@ export class CourseService {
   async deleteCourse(courseId: string) {
     return await this.courseDAO.deleteCourse(courseId);
   }
-}  
+};

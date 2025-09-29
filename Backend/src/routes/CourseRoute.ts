@@ -14,4 +14,4 @@ export function createCourseRouter() {
   router.get("/:id", courseController.fetchCourseById);
 
   return router;
-}
+};

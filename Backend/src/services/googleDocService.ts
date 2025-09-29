@@ -55,4 +55,4 @@ export async function fetchGoogleDocAsMarkdown(
       error instanceof Error ? error.message : error
     )
   }
-}
+};

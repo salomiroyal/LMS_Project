@@ -28,4 +28,4 @@ export class DAOManager {
       DAOManager.batchDao = new BatchDAOMongo();
     }
   }
-}
+};

@@ -16,4 +16,4 @@ export class ServiceManager {
     ServiceManager.courseService = new CourseService(DAOManager.courseDao);
     ServiceManager.batchService = new BatchService(DAOManager.batchDao);
   }
-}
+};

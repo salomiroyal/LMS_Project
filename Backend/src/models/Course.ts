@@ -8,7 +8,7 @@ export interface IBaseCourse extends Document {
   category: Category;
   subtitle: mongoose.Types.ObjectId[];
   problems: mongoose.Types.ObjectId[];
-}
+};
 
 const BaseCourseSchema = new Schema<IBaseCourse>({
   title: { type: String, required: true },

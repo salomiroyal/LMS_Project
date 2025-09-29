@@ -16,7 +16,7 @@ export const setupApp = async () => {
   app.use("/Course", createCourseRouter());
     app.use("/Batch", createBatchRouter());
 
-  // Error-handling middleware
+  
   app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     console.error("Error middleware caught an error:", err);
     res.status(err.statusCode || 500).json({
