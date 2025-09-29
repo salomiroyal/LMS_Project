@@ -16,19 +16,19 @@ export function parseMarkdownContent(markdown: string) {
       const block = match[0];
       const subtopicTitle = match[1].trim();
 
-      // 🎥 Extract YouTube videos
+      
       const videos = (block.match(/https?:\/\/[^\s]+/g) || []).filter((v) =>
         v.includes("youtu")
       );
 
-      // 📘 Extract Assignments
+      
       const assignmentSection = block.split("Assignments:")[1] || "";
       const assignments = assignmentSection
         .split("\n")
         .map((line) => line.trim().replace(/^- /, ""))
         .filter((line) => line && !line.startsWith("YouTube"));
 
-      // 📝 Notes = everything before YouTube Videos:
+      
       const notesSection = block
         .split("YouTube Videos:")[0]
         .replace(/^Subtopic:[^\n]+\n/, "");
@@ -36,11 +36,11 @@ export function parseMarkdownContent(markdown: string) {
         .split("\n")
         .map((line) => line.trim())
         .filter((line) => line && !line.startsWith("Subtopic"))
-        .map((line) => ({ text: line })); // ✅ FIX: use "text" key
+        .map((line) => ({ text: line })); 
 
       subtopics.push({
         subtopic: subtopicTitle,
-        notes,        // array of {text: "..."}
+        notes,        
         videos,
         assignments,
       });

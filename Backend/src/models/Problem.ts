@@ -22,7 +22,7 @@ const ProblemSchema = new Schema<IProblem>({
   videoLink: { type: String, required: true },
 });
 
-export const Problem = mongoose.model<IProblem>("Problem", ProblemSchema);
+export const Problem = mongoose.model<IProblem>("Problem", ProblemSchema)
 
 
 

@@ -11,7 +11,7 @@ export class CourseService {
   }
 
   async createCourseWithSubtopics(data: any) {
-    const { title, description, category, subtopics = [] } = data;
+    const { title, description, category, subtopics = [] } = data
 
     const savedCourse = await this.courseDAO.createCourse({ title, description, category });
 

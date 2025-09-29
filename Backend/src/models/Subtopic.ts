@@ -9,7 +9,7 @@ export interface INote {
 export interface ISubtopic extends Document {
   title: string;
   description?: string;
-  basecourseId: mongoose.Types.ObjectId;  // Make sure to use ObjectId type
+  basecourseId: mongoose.Types.ObjectId;  
   notes: INote[];
   videos: string[];
   assignments: string[];

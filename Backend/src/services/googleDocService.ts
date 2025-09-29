@@ -53,6 +53,6 @@ export async function fetchGoogleDocAsMarkdown(
     console.error(
       "Error fetching document:",
       error instanceof Error ? error.message : error
-    );
+    )
   }
 }

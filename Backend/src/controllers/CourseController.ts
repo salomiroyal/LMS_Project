@@ -1,7 +1,6 @@
 
 import type{ Request, Response } from "express";
 import { CourseService } from "../services/CourseService";
-import { DAOManager } from "../dao/DAOManager";
 import { fetchGoogleDocAsMarkdown } from "../services/googleDocService";
 import { parseMarkdownContent } from "../utils/parseMarkdown";
 
