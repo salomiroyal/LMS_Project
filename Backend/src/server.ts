@@ -1,4 +1,4 @@
-import { appConfig } from "./config/appConfig";
+import { appConfig } from "./Config/appConfig";
 import { setupApp } from "./app";
 export const startServer = async () => {
   try {

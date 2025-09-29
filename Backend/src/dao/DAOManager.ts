@@ -1,4 +1,4 @@
-import { appConfig } from "../config/appConfig";
+import { appConfig } from "../Config/appConfig";
 import { mongoConnection } from "../db/mongoConnection";
 import type { IUserDAO } from "./interfaces/IUserDAO";
 

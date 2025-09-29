@@ -3,3 +3,5 @@ node_modules/
 
 # Environment variables
 .env
+
+Backend/src/utils/service-account.json
