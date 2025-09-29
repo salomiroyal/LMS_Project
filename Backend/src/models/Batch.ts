@@ -19,7 +19,7 @@ const BatchSchema = new Schema<IBatch>(
   {
     timestamps: true 
   }
-);
+)
 
 const BatchModel = mongoose.model<IBatch>('Batch', BatchSchema);
 

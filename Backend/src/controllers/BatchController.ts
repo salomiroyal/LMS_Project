@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import { BatchService } from "../services/BatchService";
-import { DAOManager } from "../dao/DAOManager";
+
 
 export class BatchController {
   private batchService: BatchService;
@@ -30,7 +30,7 @@ export class BatchController {
     }
   };
 
-  // ✅ Fetch batch by ID
+  
   getBatchById = async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
@@ -79,7 +79,7 @@ getBatchMembers = async (req: Request, res: Response) => {
     }
   };
 
-  // ✅ Delete batch
+  
   deleteBatch = async (req: Request, res: Response) => {
     try {
       const { id } = req.params;

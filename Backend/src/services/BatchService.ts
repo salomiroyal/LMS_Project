@@ -17,13 +17,13 @@ export class BatchService {
       role: "student",
     });
 
-    // Validate teachers
+  
     const validTeachers = await UserModel.find({
       _id: { $in: teacherIds },
       role: "teacher",
     });
 
-    // Pass only validated IDs to DAO
+  
     return this.batchDAO.createBatch({
       batchName,
       students: validStudents.map((s) => s._id),
@@ -32,34 +32,34 @@ export class BatchService {
     });
   }
 
-  // ✅ Update batch
+  
   async updateBatch(batchId: string, data: Partial<IBatch>) {
     return this.batchDAO.updateBatch(batchId, data);
   }
 
-  // ✅ Delete batch
+  
   async deleteBatch(batchId: string) {
     const deleted = await this.batchDAO.deleteBatch(batchId);
     if (!deleted) throw new Error("Batch not found");
     return deleted;
   }
 
-  // ✅ Get all batches
+  
   async getAllBatches() {
     return this.batchDAO.getAllBatches();
   }
 
-  // ✅ Get batch by ID
+  
   async getBatchById(batchId: string) {
     return this.batchDAO.getBatchById(batchId);
   }
 
-  // ✅ Get my batches
+  
   async getMyBatches(userId: string, role: "student" | "teacher" | "admin") {
     return this.batchDAO.getMyBatches(userId, role);
   }
 
-  // ✅ Get batch members
+  
  async getBatchMembers(batchId: string) {
     return this.batchDAO.getBatchMembers(batchId);
   }
