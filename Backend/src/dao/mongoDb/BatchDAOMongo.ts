@@ -12,14 +12,28 @@ export class BatchDAOMongo implements IBatchDAO {
     return await BatchModel.find()
       .populate("students")
       .populate("teachers")
-      .populate("course");
+      .populate({
+    path: "course",
+    populate: {
+      path: "subtitle",
+      model: "Subtopic",
+      select: "title description notes videos assignments", // Optional: select only required fields
+    },
+  })
   }
 
   async getBatchById(id: string): Promise<IBatch | null> {
     return await BatchModel.findById(id)
       .populate("students")
       .populate("teachers")
-      .populate("course");
+      .populate({
+    path: "course",
+    populate: {
+      path: "subtitle",
+      model: "Subtopic",
+      select: "title description notes videos assignments", // Optional: select only required fields
+    },
+  })
   }
 
   async updateBatch(id: string, data: Partial<IBatch>): Promise<IBatch | null> {
@@ -37,7 +51,6 @@ export class BatchDAOMongo implements IBatchDAO {
     const query: any = {};
     if (role === "student") query.students = userId;
     else if (role === "teacher") query.teachers = userId;
-    // admin can see all, so no filter
     return await BatchModel.find(query)
       .populate("students")
       .populate("teachers")

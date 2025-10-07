@@ -11,7 +11,7 @@ export interface IBatchDAO {
   getMyBatches(userId: string, role: "student" | "teacher" | "admin"): Promise<IBatch[]>; 
   getBatchMembers(batchId: string): Promise<{ students: string[]; teachers: string[] }>;
 
-}
+};
 
 
 

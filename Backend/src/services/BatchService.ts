@@ -63,4 +63,4 @@ export class BatchService {
  async getBatchMembers(batchId: string) {
     return this.batchDAO.getBatchMembers(batchId);
   }
-}
+};

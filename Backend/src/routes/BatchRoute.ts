@@ -19,4 +19,4 @@ router.get("/:id", batchController.getBatchById);
   
 
   return router;
-}
+};
