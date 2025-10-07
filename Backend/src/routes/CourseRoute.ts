@@ -10,7 +10,7 @@ export function createCourseRouter() {
 
   router.post("/create-from-docs",authenticate,isAdmin,courseController.createCourseFromDocs);
   router.delete("/:id",authenticate,isAdmin,courseController.removeCourse);
-  router.get("/", courseController.fetchAllCourses);
+  router.get("/all", courseController.fetchAllCourses);
   router.get("/:id", courseController.fetchCourseById);
 
   return router;

@@ -11,12 +11,24 @@ export class CourseDAOMongo implements ICourseDAO {
   }
 
   async getAllCourses(): Promise<IBaseCourse[]> {
-    return await Basecourse.find().exec();
+    return await Basecourse.find()
+         .populate({
+      path: "subtitle",
+      model: "Subtopic", 
+      select: "title description notes videos assignments", 
+    })
+    .exec();
   }
 
   async getCourseById(courseId: string): Promise<IBaseCourse | null> {
-    return await Basecourse.findById(courseId).exec();
-  }
+  return await Basecourse.findById(courseId)
+    .populate({
+      path: "subtitle",
+      model: "Subtopic", 
+      select: "title description notes videos assignments", 
+    })
+    .exec();
+}
 
   async deleteCourse(courseId: string): Promise<IBaseCourse | null> {
     return await Basecourse.findByIdAndDelete(courseId).exec();

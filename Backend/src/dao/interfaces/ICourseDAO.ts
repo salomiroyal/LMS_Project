@@ -8,4 +8,4 @@ export interface ICourseDAO {
   getCourseById(courseId: string): Promise<IBaseCourse | null>;
   updateCourse(courseId: string, updateData: Partial<IBaseCourse>): Promise<IBaseCourse | null>;
   deleteCourse(courseId: string): Promise<IBaseCourse | null>;
-};
+}

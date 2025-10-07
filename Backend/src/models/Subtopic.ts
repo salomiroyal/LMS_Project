@@ -28,6 +28,6 @@ const SubtopicSchema = new Schema<ISubtopic>({
   videos: [String],
   assignments: [String]
   
-});
+})
 
 export const Subtopic = mongoose.model<ISubtopic>("Subtopic", SubtopicSchema);

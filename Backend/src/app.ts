@@ -24,5 +24,5 @@ export const setupApp = async () => {
       message: err.message || "Something went wrong",
     });
   });
-  return app; 
-};
+  return app;
+}

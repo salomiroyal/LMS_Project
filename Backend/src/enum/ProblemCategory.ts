@@ -6,5 +6,5 @@ export enum ProblemCategory {
     DYNAMIC_PROGRAMMING = "dynamic programming",
     GRAPH = "graph"
     
-  };
+  }
   

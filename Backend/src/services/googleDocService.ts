@@ -11,7 +11,7 @@ export async function fetchGoogleDocAsMarkdown(
   docId: string
 ): Promise<string | undefined> {
   try {
-    // ✅ Use service-account.json from utils folder
+    
     const auth = new google.auth.GoogleAuth({
       keyFile: path.join(__dirname, "../utils/service-account.json"),
       scopes: ["https://www.googleapis.com/auth/documents.readonly"],
